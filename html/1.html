@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back to Top Button</title>
+   <style>
+
+   </style>
+</head>
+<body>
+<div class="content">
+    <!-- 页面内容，足够长以允许滚动 -->
+    <p>这是一些示例内容。</p>
+    <!-- 重复多个段落以创建足够长的内容 -->
+    <p>滚动到底部并点击“置顶”按钮。</p>
+    <!-- 重复多个段落以创建足够长的内容 -->
+    <button id="backToTopBtn" class="back-to-top-btn">置顶</button>
+</div>
+
+<script>
+    // 当页面加载完成时，执行以下JavaScript代码
+    window.onload = function() {
+        // 获取按钮元素
+        var btn = document.getElementById("backToTopBtn");
+
+        // 当页面滚动时执行以下函数
+        window.onscroll = function() {
+            // 如果页面滚动超过100px，则显示按钮，否则隐藏按钮
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // 当点击按钮时，执行以下函数
+        btn.onclick = function() {
+            // 将页面滚动到顶部
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    };
+</script>
+</body>
+</html>
